@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>ImageVerify</title>
+    <!--<link rel="stylesheet" href="./css/imageVerify.css">-->
+
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+    <!--<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>-->
+    <script type="text/javascript" src="./js/imageVerify.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var interFace = {
+                getImageUrl:'./index.php?action=imageVerify',
+                verifyImageUrl:'./index.php?action=verifyCode',
+                referer:'commonLogin'
+            };
+            _imageVerify = new imageVerify($('.ImgVfy'), interFace);
+            _imageVerify.reload();
+        });
+    </script>
+</head>
+<body>
+    <form action="index.php?action=submit" method="post">
+    <div class="ImgVfy">
+
+    </div>
+        <input type="hidden" name="referer" value="commonLogin">
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
